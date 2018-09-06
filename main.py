@@ -1,6 +1,6 @@
 # main.py -- put your code here!
 # main.py -- put your code here!
-# 2 DIGITS BINARRY ADD.
+# 2 DIGITS BINARY ADD.
 from pyb import Pin
 B1Value = 0
 B2Value = 0
