@@ -1,6 +1,6 @@
 # main.py -- put your code here!
 # main.py -- put your code here!
-# Using External button to lightup LED
+# 2 DIGITS BINARRY ADD.
 from pyb import Pin
 B1Value = 0
 B2Value = 0
