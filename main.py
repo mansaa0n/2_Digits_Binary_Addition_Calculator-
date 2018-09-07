@@ -52,7 +52,7 @@ while True:
             B2Value = 0
             pyb.delay(250)
         else:
-            pyb.delay(250)
+            pyb.delay(170)
             LEDBTN1.low()
             LEDBTN2.low()
             AddLEDBTN.low()
@@ -88,6 +88,6 @@ while True:
                     R2LEDBTN4.high()
                     CLED.high()
             elif B2ValueS == 1 or B2Value == 1 and carry1 != 1:
-                    R2LEDBTN4.high()
+                    R2LEDBTN4.low()
             else:
                     R2LEDBTN4.low()
