@@ -52,7 +52,7 @@ while True:
             B2Value = 0
             pyb.delay(250)
         else:
-            pyb.delay(170)
+            pyb.delay(100)
             LEDBTN1.low()
             LEDBTN2.low()
             AddLEDBTN.low()
@@ -68,26 +68,23 @@ while True:
         carry1 = 0
         if B1ValueS != 0 or B1Value != 0:
             if B1ValueS == 1 and B1Value == 1:
-                if B2ValueS == 1 or B2Value == 1:
-                    R2LEDBTN4.low()
-                    CLED.high()
-                    carry1 = 1
-                    pyb.delay(100)
-                else:
-                    R2LEDBTN4.high()
-                    R1LEDBTN3.low()
-                    pyb.delay(100)
+                    if B2ValueS == 1 or B2Value == 1:
+                        CLED.high()
+                    elif B2Value == 1 and B2ValueS == 1:
+                        R2LEDBTN4.high()
+                        CLED.high()
+                    else:
+                        R2LEDBTN4.high()
             elif B1ValueS == 1 or B1Value == 1:
-                R1LEDBTN3.high()
-        pyb.delay(200)
-        if B2ValueS != 0 or B2Value != 0:
-            if B2ValueS == 1 and B2Value == 1:
-                    R2LEDBTN4.low()
-                    CLED.high()
-            elif B2ValueS == 1 and B2Value == 1 and carry1 == 1:
-                    R2LEDBTN4.high()
-                    CLED.high()
-            elif B2ValueS == 1 or B2Value == 1 and carry1 != 1:
-                    R2LEDBTN4.low()
+                    if B2Value == 1 and B2ValueS == 1:
+                        R1LEDBTN3.high()
+                        R2LEDBTN4.low()
+                        CLED.high()
+                    elif B2Value == 1 or B2ValueS == 1:
+                        R1LEDBTN3.high()
+                        R2LEDBTN4.high()
+                    else:
+                        R1LEDBTN3.high()
             else:
-                    R2LEDBTN4.low()
+                R1LEDBTN3.low()
+                R2LEDBTN4.low()
